@@ -76,11 +76,11 @@ func Main(socketLocation string) {
 		}
 		// Kick off a go routine to handle the connection. Then go back to waiting for the next.
 		log.Println("Starting a handler for the connection.")
-		go echoServer(clientConnection, state)
+		go connectionHandler(clientConnection, state)
 	}
 }
 
-func echoServer(c net.Conn, state *internalState) {
+func connectionHandler(c net.Conn, state *internalState) {
 	// Close the connection after the request is finished.
 	// Sockets are bidirectional and persistant. We could have the server and client
 	// keep talking over the same connection. However in this case I am closing the

@@ -6,6 +6,8 @@ import (
 	"strings"
 )
 
+// Not finished yet
+
 func main() {
 	wordmap := countWords(findWords(test1))
 	//for word, count := range wordmap {
